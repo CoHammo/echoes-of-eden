@@ -1,0 +1,79 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+@plugin 'daisyui' {
+	themes: false;
+}
+
+@font-face {
+	font-family: 'Berkshire';
+	src: url('/fonts/BerkshireSwash-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'FiraSans';
+	src: url('/fonts/FiraSans-Bold.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Signika';
+	src: url('/fonts/Signika-VariableFont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'PTSerif';
+	src: url('/fonts/PTSerif-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'PTSerif';
+	src: url('/fonts/PTSerif-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Lexend';
+	src: url('/fonts/Lexend-Variable.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--color-goldish: #b49a67;
+	--color-custard: #eaddb6;
+	--color-mahogany: #3c0000;
+	--color-rich-brown: #421404;
+	--color-phthalo: #123524;
+	--color-phthalo2: #124524;
+	--color-mountain: #a1a396;
+	--color-mountain2: #a1a38f;
+	--font-berkshire: 'Berkshire', serif;
+	--font-fira: 'FiraSans', sens-serif;
+	--font-signika: 'Signika', sans-serif;
+	--font-pt: 'PTSerif', sans-serif;
+	--font-lexend: 'Lexend', sans-serif;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'eden';
+	default: true;
+	color-scheme: light;
+
+	--color-primary: #421404;
+	--color-secondary: #123524;
+}
