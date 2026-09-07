@@ -4,8 +4,9 @@
 	let { pic, name, desc, featured }: { pic: string; name: string; desc: string; featured: URL[] } =
 		$props();
 	let expanded = $state(false);
-	let dialog: HTMLDialogElement | undefined = $state();
 	let image: HTMLImageElement | undefined = $state();
+	let dialog: HTMLDialogElement | undefined = $state();
+	let closeButton: HTMLButtonElement | undefined = $state();
 
 	function getDialogStart() {
 		if (image !== undefined && dialog !== undefined) {
@@ -21,6 +22,7 @@
 	}
 
 	function closeDialog() {
+		closeButton!.style.zIndex = '0';
 		document.startViewTransition(() => {
 			getDialogStart();
 			expanded = false;
@@ -39,6 +41,7 @@
 			document.startViewTransition(() => {
 				expanded = true;
 			});
+			closeButton!.style.zIndex = '1';
 		}}
 		class="rounded-lg hover:cursor-pointer"
 	>
@@ -66,10 +69,10 @@
 	>
 		<div class="dialog-container">
 			<button
+				bind:this={closeButton}
 				onclick={() => {
 					closeDialog();
 				}}
-				style="view-transition-name: match-element;"
 				class="close-button">X</button
 			>
 			<div class="carousel min-h-fit">
@@ -128,7 +131,8 @@
 			width: var(--width);
 
 			.close-button {
-				@apply btn absolute top-2 right-2 z-1 btn-circle border-none bg-black/20 hover:bg-black/30;
+				@apply btn absolute top-2 right-2 btn-circle border-none bg-black/20 hover:bg-black/30;
+				view-transition-name: match-element;
 			}
 
 			.carousel {
@@ -152,10 +156,6 @@
 		.dialog-container {
 			width: 90dvw;
 			@apply scrollbar-auto p-4;
-
-			.close-button {
-				@apply z-0;
-			}
 
 			.content-container {
 				@apply flex;

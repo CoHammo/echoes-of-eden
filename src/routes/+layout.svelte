@@ -1,13 +1,24 @@
 <script lang="ts">
 	// import type { Pathname } from '$app/types';
+	import { beforeNavigate } from '$app/navigation';
 	import { resolve } from '$app/paths';
+	import menu from '$lib/assets/basil--menu-outline.svg';
+	import close from '$lib/assets/basil--cross-solid.svg';
 	// import { page } from '$app/state';
 	// import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import './layout.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import flower from '$lib/assets/eoe_flower.png';
+	import { slide } from 'svelte/transition';
 
 	let { children } = $props();
+	let opened = $state(false);
+
+	beforeNavigate((nav) => {
+		if (nav.from?.route.id !== nav.to?.route.id) {
+			opened = false;
+		}
+	});
 </script>
 
 <svelte:head>
@@ -15,21 +26,52 @@
 	<title>Echoes of Eden</title>
 </svelte:head>
 
-<header class="relative flex h-28 flex-row items-center bg-mountain2 py-3 text-black">
-	<nav class="relative flex w-full items-center px-10">
-		<a
-			href={resolve('/')}
-			class="absolute z-1 w-20 overflow-hidden rounded-lg font-signika text-[1.9rem]/9 font-extrabold"
+<header class="relative flex h-28 items-center bg-mountain2 py-3 text-black">
+	<nav class="relative flex h-fit w-full flex-row items-center px-8 max-[550px]:hidden">
+		<a href={resolve('/')} class="absolute z-1 w-20 overflow-hidden rounded-lg"
 			><img src={flower} alt="A white flower" /></a
 		>
-		<div class="flex w-full justify-center gap-6 font-signika text-[1.5rem]">
+		<div
+			class="flex w-full justify-center gap-6 font-signika text-[1.5rem] max-[800px]:justify-end"
+		>
 			<a href={resolve('/about')}>About</a>
 			<a href={resolve('/creators')}>Creators</a>
 			<a href={resolve('/works')}>Works</a>
 			<a href={resolve('/articles')}>Articles</a>
 		</div>
 	</nav>
+	<nav class="relative flex w-full flex-row items-center justify-end px-4 min-[550px]:hidden">
+		<div class="flex w-full justify-center">
+			<a href={resolve('/')} class="w-20 justify-center overflow-hidden rounded-lg"
+				><img src={flower} alt="A white flower" /></a
+			>
+		</div>
+		<button
+			onclick={() => (opened = !opened)}
+			class="btn absolute z-1 w-11 rounded-lg border-none p-0 hover:bg-black/20"
+			><img src={menu} alt="Menu Icon" /></button
+		>
+	</nav>
 </header>
+
+{#if opened}
+	<div
+		transition:slide={{ axis: 'x' }}
+		class="absolute top-0 right-0 z-2 flex w-50 flex-col gap-4 rounded-lg bg-mountain2 p-4 text-center font-signika text-2xl shadow"
+	>
+		<div class="mt-5 flex flex-row justify-end">
+			<button
+				onclick={() => (opened = !opened)}
+				class="btn w-12 rounded-lg border-none p-0 hover:bg-black/20"
+				><img src={close} alt="Close Menu Icon" /></button
+			>
+		</div>
+		<a href={resolve('/about')}>About</a>
+		<a href={resolve('/creators')}>Creators</a>
+		<a href={resolve('/works')}>Works</a>
+		<a href={resolve('/articles')}>Articles</a>
+	</div>
+{/if}
 
 <main class="z-2 flex min-h-[33.6rem] w-full flex-col overflow-hidden">
 	{@render children()}

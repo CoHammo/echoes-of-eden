@@ -1,5 +1,5 @@
 <div class="flex w-full flex-col pt-6">
-	<h1 class="mx-4 mb-4 text-center font-lexend text-[2.7rem] font-semibold">Echoes of Eden</h1>
+	<h1 class="mx-4 mb-5 text-center font-lexend text-[2.6rem] font-semibold">Echoes of Eden</h1>
 	<div
 		class="mx-4 mb-12 max-w-220 self-center rounded-lg bg-zinc-300 p-4 text-center font-pt text-[1.25rem]/8 text-black shadow-lg"
 	>
