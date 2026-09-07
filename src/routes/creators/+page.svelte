@@ -5,8 +5,8 @@
 	const people = [
 		{
 			pic: hjr,
-			name: 'Keepers of the Garden',
-			desc: 'Hope and J.R. Street, co-founders of Echoes of Eden, started this band when they got married in 2026. They make fun and genuine songs inspired by their faith in God. The first song they released together is called Beautiful Reminder, which J.R. wrote and sang for Hope when he proposed to her. Give it a listen on Spotify!',
+			name: 'Hope and J.R. Streett',
+			desc: 'Hope and J.R., co-founders of Echoes of Eden, started making music when they got married in 2026. They make fun and genuine songs inspired by their faith in God. The first song they released together is called Beautiful Reminder, which J.R. wrote and sang for Hope when he proposed to her. Give it a listen on Spotify!',
 			featured: [new URL('https://open.spotify.com/track/1CUrG8zz2pBlTX46WXzkP6')]
 		}
 	];

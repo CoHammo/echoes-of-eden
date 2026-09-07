@@ -19,6 +19,16 @@
 			dialog.style.setProperty('--delta-y', `${imgY - centerY}px`);
 		}
 	}
+
+	function closeDialog() {
+		document.startViewTransition(() => {
+			getDialogStart();
+			expanded = false;
+		});
+		setTimeout(() => {
+			dialog?.close();
+		}, 350);
+	}
 </script>
 
 <div class="flex flex-col items-center rounded-lg">
@@ -45,18 +55,23 @@
 		class:expanded
 		bind:this={dialog}
 		oncancel={(event) => {
-			document.startViewTransition(() => {
-				getDialogStart();
-				expanded = false;
-			});
 			event.preventDefault();
-			setTimeout(() => {
-				dialog?.close();
-			}, 350);
+			closeDialog();
 		}}
-		onclose={() => {}}
+		onclick={(event) => {
+			if (event.target === dialog) {
+				closeDialog();
+			}
+		}}
 	>
 		<div class="dialog-container">
+			<button
+				onclick={() => {
+					closeDialog();
+				}}
+				style="view-transition-name: match-element;"
+				class="close-button">X</button
+			>
 			<div class="carousel min-h-fit">
 				<img src={pic} alt="An Echoes of Eden Creative Partner" class="w-88 rounded-lg" />
 			</div>
@@ -109,16 +124,19 @@
 		max-height: 90dvh;
 
 		.dialog-container {
-			@apply flex scrollbar-none flex-col items-center justify-center overflow-y-auto bg-mountain2;
+			@apply relative flex scrollbar-none flex-col items-center justify-center overflow-y-auto bg-mountain2;
 			width: var(--width);
+
+			.close-button {
+				@apply btn absolute top-2 right-2 z-1 btn-circle border-none bg-black/20 hover:bg-black/30;
+			}
 
 			.carousel {
 				view-transition-name: match-element;
 			}
 
 			.content-container {
-				@apply flex h-0 flex-col items-center justify-center text-center;
-				view-transition-name: match-element;
+				@apply hidden flex-col items-center justify-center text-center;
 			}
 		}
 
@@ -135,8 +153,12 @@
 			width: 90dvw;
 			@apply scrollbar-auto p-4;
 
+			.close-button {
+				@apply z-0;
+			}
+
 			.content-container {
-				@apply h-auto;
+				@apply flex;
 			}
 		}
 
