@@ -15,29 +15,30 @@
 	<title>Echoes of Eden</title>
 </svelte:head>
 
-<header class="flex h-32 flex-row items-center bg-mountain2 px-10 py-3 text-black">
-	<nav class="relative flex w-full items-center">
+<header class="relative flex h-28 flex-row items-center bg-mountain2 py-3 text-black">
+	<nav class="relative flex w-full items-center px-10">
 		<a
 			href={resolve('/')}
-			class="absolute -bottom-4 z-1 w-20 rounded-lg font-signika text-[1.9rem]/9 font-extrabold"
+			class="absolute z-1 w-20 overflow-hidden rounded-lg font-signika text-[1.9rem]/9 font-extrabold"
 			><img src={flower} alt="A white flower" /></a
 		>
-		<div class="relative bottom-2.5 flex w-full justify-center gap-6 font-signika text-[1.5rem]">
+		<div class="flex w-full justify-center gap-6 font-signika text-[1.5rem]">
 			<a href={resolve('/about')}>About</a>
-			<a href={resolve('/artists')}>Artists</a>
+			<a href={resolve('/creators')}>Creators</a>
+			<a href={resolve('/works')}>Works</a>
 			<a href={resolve('/articles')}>Articles</a>
 		</div>
 	</nav>
 </header>
 
-<main class="relative bottom-4 flex min-h-[32.6rem] w-full overflow-hidden rounded-t-2xl bg-white">
+<main class="z-2 flex min-h-[33.6rem] w-full flex-col overflow-hidden">
 	{@render children()}
 </main>
 
 <footer
-	class="flex h-25 items-center justify-center bg-zinc-900 p-4 font-lexend text-lg text-white"
+	class="flex h-25 items-center justify-center bg-zinc-900 p-4 font-lexend text-lg text-gray-200"
 >
-	<p class="mr-3">Copyright 2026 Collin Hammond</p>
+	<p class="mr-3">© 2026 Collin Hammond</p>
 	<a rel="external" aria-label="GitHub icon" href="https://github.com/CoHammo" target="_blank">
 		<svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
 			<path d="M0 0h24v24H0z" fill="none" />

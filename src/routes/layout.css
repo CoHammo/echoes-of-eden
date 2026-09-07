@@ -53,10 +53,19 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'Josefin';
+	src: url('/fonts/JosefinSans-Variable.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 @theme {
 	--color-goldish: #b49a67;
 	--color-custard: #eaddb6;
 	--color-mahogany: #3c0000;
+	--color-mahogany2: #300000;
 	--color-rich-brown: #421404;
 	--color-phthalo: #123524;
 	--color-phthalo2: #124524;
@@ -67,6 +76,8 @@
 	--font-signika: 'Signika', sans-serif;
 	--font-pt: 'PTSerif', sans-serif;
 	--font-lexend: 'Lexend', sans-serif;
+	--font-josefin: 'Josefin', sans-serif;
+	--container-reading: 52rem;
 }
 
 @plugin 'daisyui/theme' {
