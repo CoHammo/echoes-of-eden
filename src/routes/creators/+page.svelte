@@ -41,13 +41,3 @@
 	/> -->
 	</div>
 </div>
-
-<style>
-	/*
-	::view-transition-group(expanding-card) {
-		animation-duration: 0.3s;
-		animation-timing-function: unset;
-		 Custom cubic-bezier creates an elastic "pop" or spring effect
-		animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
-	}*/
-</style>

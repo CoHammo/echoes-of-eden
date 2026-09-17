@@ -73,7 +73,7 @@
 	</div>
 {/if}
 
-<main class="z-2 flex min-h-[33.6rem] w-full flex-col overflow-hidden">
+<main class="main-content flex w-full flex-col overflow-hidden">
 	{@render children()}
 </main>
 
@@ -91,3 +91,9 @@
 		</svg>
 	</a>
 </footer>
+
+<style lang="postcss">
+	.main-content {
+		min-height: calc(100dvh - 7rem - 6.25rem);
+	}
+</style>
