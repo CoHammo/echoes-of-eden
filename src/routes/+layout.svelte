@@ -7,8 +7,8 @@
 	// import { page } from '$app/state';
 	// import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
-	import flower from '$lib/assets/eoe_flower.png';
+	import favicon from '$lib/assets/temp-ai-star-cross.avif';
+	import starlogo from '$lib/assets/temp-ai-star-cross.avif';
 	import { slide } from 'svelte/transition';
 
 	let { children } = $props();
@@ -28,23 +28,29 @@
 
 <header class="relative flex h-28 items-center bg-mountain2 py-3 text-black">
 	<nav class="relative flex h-fit w-full flex-row items-center px-8 max-[550px]:hidden">
-		<a href={resolve('/')} class="absolute z-1 w-20 overflow-hidden rounded-lg"
-			><img src={flower} alt="A white flower" /></a
-		>
+		<a
+			href={resolve('/')}
+			class="absolute z-1 flex flex-row items-center justify-center gap-2 overflow-hidden rounded-lg"
+			><img src={starlogo} alt="A white flower" class="w-16" />
+			<h1 class="font-signika text-[1.6rem]/7 font-bold">Echoes <br /> of <br /> Eden</h1>
+		</a>
 		<div
 			class="flex w-full justify-center gap-6 font-signika text-[1.5rem] max-[800px]:justify-end"
 		>
 			<a href={resolve('/about')}>About</a>
 			<a href={resolve('/creators')}>Creators</a>
-			<a href={resolve('/works')}>Works</a>
+			<a href={resolve('/art')}>Art</a>
 			<a href={resolve('/articles')}>Articles</a>
 		</div>
 	</nav>
 	<nav class="relative flex w-full flex-row items-center justify-end px-4 min-[550px]:hidden">
 		<div class="flex w-full justify-center">
-			<a href={resolve('/')} class="w-20 justify-center overflow-hidden rounded-lg"
-				><img src={flower} alt="A white flower" /></a
-			>
+			<a
+				href={resolve('/')}
+				class="flex flex-row items-center justify-center overflow-hidden rounded-lg"
+				><img src={starlogo} alt="A white flower" class="w-16" />
+				<h1 class="font-lexend text-[1.5rem]/7 font-bold">Echoes <br /> of <br /> Eden</h1>
+			</a>
 		</div>
 		<button
 			onclick={() => (opened = !opened)}

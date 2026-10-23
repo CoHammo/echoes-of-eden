@@ -3,8 +3,8 @@
 	<div
 		class="mx-4 mb-12 max-w-220 self-center rounded-lg bg-zinc-300 p-4 text-center font-pt text-[1.25rem]/8 text-black shadow-lg"
 	>
-		Echoes of Eden proclaims God’s glory through the cultivation of art and media for the enrichment
-		of God's people. We hope to use stories, poems, music, drawings, paintings, and more to draw out
+		Echoes of Eden exists to proclaim God’s glory through the cultivation and enjoyment of art and
+		media. We share and use stories, poems, music, drawings, paintings, and more to draw out
 		peoples' love for God and increase their faith in Him, and our ultimate aim is to please God
 		with our creations.
 	</div>
@@ -28,16 +28,24 @@
 			</p>
 
 			<p class="rounded border-2 border-goldish bg-white/20 px-5 py-3 text-center italic">
-				...As the noises of night go on a new voice becomes clear <br />The King has arrived and He
-				seems very near <br /> For all the other noises have mingled and shown <br /> There’s a King
-				who is talking who sits on the throne <br /> His words are like honey, sweeter than sweet
-				<br />
-				And there are no other sounds I would rather meet <br /> In case you didn’t hear, God is the
-				King <br /> That’s what the nighttime will every night sing <br /> That’s what the noises of
-				animals and wind bring <br /> We’re ruled by God, and to Him we must cling <br /> Take heed
-				now to the kingdom of sounds <br /> Listen closely for another Kingdom to be found <br />
-				One in which people live forever in light all around <br /> And whose mirth and laughter is yet
-				more profound
+				...As the noises of night go on a new voice becomes clear <br />
+				The King has arrived and He seems very near <br /> <br />
+
+				For all the other noises have mingled and shown <br />
+				There’s a King who is talking who sits on the throne <br /> <br />
+
+				His words are like honey, sweeter than sweet <br />
+				And there are no other sounds I would rather meet <br /> <br />
+
+				In case you didn’t hear, God is the King <br />
+				That’s what the nighttime will every night sing <br />
+				That’s what the noises of animals and wind bring <br />
+				We’re ruled by God, and to Him we must cling <br /> <br />
+
+				Take heed now to the kingdom of sounds <br />
+				Listen closely for another Kingdom to be found <br />
+				One in which people live forever in light all around <br />
+				And whose mirth and laughter is yet more profound
 			</p>
 		</div>
 	</div>

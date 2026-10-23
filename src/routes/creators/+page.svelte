@@ -20,7 +20,7 @@
 			share what they've made. Click on someone to see more about them and to explore their work!
 		</p>
 	</div>
-	<div class="mt-8 flex flex-wrap items-center justify-center gap-4 p-2">
+	<div class="mx-6 mt-8 flex flex-wrap items-center justify-center gap-4 p-2">
 		{#each people as person (person.name)}
 			<CreatorCard
 				name={person.name}
@@ -29,15 +29,5 @@
 				featured={person.featured}
 			/>
 		{/each}
-		<!-- <CreatorCard
-		name="Keepers of the Garden"
-		pic={hjr}
-		desc="Hope and J.R. Street, co-founders of Echoes of Eden, make up this band with fun and genuine songs."
-	/>
-	<CreatorCard
-		name="Keepers of the Garden"
-		pic={hjr}
-		desc="Hope and J.R. Street, co-founders of Echoes of Eden, make up this band with fun and genuine songs."
-	/> -->
 	</div>
 </div>

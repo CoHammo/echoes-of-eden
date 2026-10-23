@@ -28,7 +28,7 @@
 		expanded = false;
 		setTimeout(() => {
 			dialog?.close();
-		}, 350);
+		}, 250);
 	}
 </script>
 
@@ -48,7 +48,7 @@
 			alt="An Echoes of Eden Creative Partner"
 			class="w-88 rounded-lg"
 		/>
-		<h3 class="mt-2 text-center font-lexend text-[1.35rem]">{name}</h3>
+		<h3 class="mt-1 text-center font-lexend text-[1.35rem]">{name}</h3>
 	</button>
 
 	<dialog
@@ -77,7 +77,7 @@
 			</div>
 			<div class="content-grid-container">
 				<div class="content-container">
-					<h2 class="mt-2 mb-2 font-lexend text-[1.6rem]">{name}</h2>
+					<h2 class="mt-1 mb-2 font-lexend text-[1.6rem]">{name}</h2>
 					<p class="mb-4 max-w-reading text-lg">
 						{desc}
 					</p>
@@ -106,16 +106,17 @@
 	@reference '../../routes/layout.css';
 
 	dialog {
-		@apply place-self-center rounded-lg shadow;
+		--speed: 0.25s;
+		@apply fixed m-auto rounded-lg shadow;
 		transform: translate(var(--delta-x), var(--delta-y));
 		max-height: 90dvh;
 		transition-duration: 400ms;
-		transition: transform 0.35s ease-in-out;
+		transition: transform var(--speed) ease-in-out;
 
 		.dialog-container {
 			@apply flex scrollbar-none flex-col items-center justify-center overflow-hidden overflow-y-auto bg-mountain2;
 			width: var(--width);
-			transition: all 0.35s ease-in-out;
+			transition: all var(--speed) ease-in-out;
 
 			.close-button {
 				@apply btn absolute top-2 right-2 btn-circle border-none bg-black/20 hover:bg-black/30;
@@ -125,13 +126,13 @@
 			}
 
 			.content-grid-container {
-				transition: all 0.35s ease-in-out;
+				transition: all var(--speed) ease-in-out;
 				display: grid;
 				grid-template-rows: 0fr;
 
 				.content-container {
 					@apply flex flex-col items-center justify-center overflow-hidden text-center;
-					transition: all 0.35s ease-in-out;
+					transition: all var(--speed) ease-in-out;
 					transform: scale(0);
 				}
 			}
