@@ -74,7 +74,7 @@
 		</div>
 		<a href={resolve('/about')}>About</a>
 		<a href={resolve('/creators')}>Creators</a>
-		<a href={resolve('/works')}>Works</a>
+		<a href={resolve('/art')}>Works</a>
 		<a href={resolve('/articles')}>Articles</a>
 	</div>
 {/if}
